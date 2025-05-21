@@ -19,4 +19,6 @@ if (livro.avaliacao === null) {
     console.log(`O livro ${livro.titulo} já possui uma avaliação`);    
 }
 
+livro.genero = 'Aventura';
+
 livroPropriedades.forEach((propriedade) => console.log(livro[propriedade]));
