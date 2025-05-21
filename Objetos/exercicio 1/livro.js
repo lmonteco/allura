@@ -1,15 +1,22 @@
 const anoAtual = new Date().getFullYear(); // ex2
-const livroPropriedades = ['titulo', 'autor', 'anoPublicacao', 'genero', 'idade'];
+const livroPropriedades = ['titulo', 'autor', 'anoPublicacao', 'genero', 'idade', 'avaliacao'];
 const livro = {
     titulo: "Senhor dos Anéis: As Duas Torres",
     autor: "J.R.R. Tolkien",
     anoPublicacao: 1954,
     genero: "Fantasia",
+    idade: null,
+    avaliacao: null
 }
 
 livro.idade = anoAtual - livro.anoPublicacao;
-let mostrarDetalhes = `Título: ${livro.titulo} - Autor: ${livro.autor} - Ano de Publicação: ${livro.anoPublicacao} - Gênero: ${livro.genero} - Idade do Livro: ${livro.idade} anos`
+let mostrarDetalhes = `Título: ${livro.titulo} - Autor: ${livro.autor} - Ano de Publicação: ${livro.anoPublicacao} - Gênero: ${livro.genero} - Idade do Livro: ${livro.idade} anos - Avaliação: ${livro.avaliacao}`;
 
-// console.log(mostrarDetalhes);
+
+if (livro.avaliacao === null) {
+    livro['avaliacao'] = '10/10';
+} else {
+    console.log(`O livro ${livro.titulo} já possui uma avaliação`);    
+}
 
 livroPropriedades.forEach((propriedade) => console.log(livro[propriedade]));
