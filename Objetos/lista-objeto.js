@@ -5,17 +5,20 @@ const estudante = {
     turma: "JavaScript",
     bolsista: true,
     telefones: ["24992381348", "2433481348"],
-    endereco: [{
+    enderecos: [{
         rua: "Joana D'arc",
-        numero: "203",
+        numero: "155",
+        complemento: "101",
         bairro: "Niteroi"
     }]
 }
 
-estudante.endereco.push({
+estudante.enderecos.push({
     rua: "Rua Oitocentos e Trinta e Tres",
     numero: "181",
+    complemento: null,
     bairro: "Jardim Tiradentes"
 });
 
-console.log(estudante.endereco[1]);
+const enderecoComComplementos = estudante.enderecos.filter((endereco) => endereco.complemento);
+console.log(enderecoComComplementos);
