@@ -8,6 +8,6 @@ const livro = {
 }
 
 livro.idade = anoAtual - livro.anoPublicacao;
+let mostrarDetalhes = `Título: ${livro.titulo} - Autor: ${livro.autor} - Ano de Publicação: ${livro.anoPublicacao} - Gênero: ${livro.genero} - Idade do Livro: ${livro.idade} anos`
 
-let mostrarDetalhes = livroPropriedades.forEach((propriedade) => livro[propriedade])
 console.log(mostrarDetalhes);
