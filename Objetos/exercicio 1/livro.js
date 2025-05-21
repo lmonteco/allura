@@ -1,5 +1,4 @@
 const anoAtual = new Date().getFullYear(); // ex2
-const livroPropriedades = ['titulo', 'autor', 'anoPublicacao', 'genero', 'idade', 'avaliacao'];
 const livro = {
     titulo: "Senhor dos Anéis: As Duas Torres",
     autor: "J.R.R. Tolkien",
@@ -21,4 +20,6 @@ if (livro.avaliacao === null) {
 
 livro.genero = 'Aventura';
 
-livroPropriedades.forEach((propriedade) => console.log(livro[propriedade]));
+delete livro.avaliacao;
+
+console.log(livro);
