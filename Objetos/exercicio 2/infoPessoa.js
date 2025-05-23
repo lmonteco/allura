@@ -23,7 +23,7 @@ const pessoas = [{
 {
     nome: 'Mateus Proença',
     idade: 45,
-    cidade: 'Angra dos Reis'
+    cidade: 'Volta Redonda'
 }]; //cria um array de objetos 'pessoas'
 
 function mostrarInfoPessoa(obj) {
@@ -34,7 +34,7 @@ function mostrarInfoPessoa(obj) {
 
 //Cria função que aceita a lista pessoas como parâmetro.
 function mostrarListaPessoas(lista) {
-    lista.forEach(pessoa => console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Cidade: ${pessoa.cidade}`))
+    lista.forEach(individuo => console.log(`Nome: ${individuo.nome}, Idade: ${individuo.idade}, Cidade: ${individuo.cidade}`))
 }
 
 //Adicione uma nova pessoa à lista pessoas
@@ -44,4 +44,15 @@ pessoas.push({
     cidade: 'Bananal'
 })
 
-mostrarListaPessoas(pessoas); //Imprime no console as informações de cada pessoa na lista.
+// Crie uma função chamada filtrarPorCidade que aceita a lista pessoas e uma string cidade como parâmetros.
+function filtrarPorCidade(lista, cidade) {
+    lista.map((individuo) => {
+        if (individuo.cidade === cidade) {
+            console.log(`Nome: ${individuo.nome}, Idade: ${individuo.idade}, Cidade: ${individuo.cidade}`);
+        }
+    });
+}
+
+// mostrarListaPessoas(pessoas); //Imprime no console as informações de cada pessoa na lista.
+
+filtrarPorCidade(pessoas, 'Volta Redonda') //A função deve retornar uma nova lista contendo apenas as pessoas que residem na cidade fornecida.
