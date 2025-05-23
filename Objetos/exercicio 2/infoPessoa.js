@@ -37,4 +37,11 @@ function mostrarListaPessoas(lista) {
     lista.forEach(pessoa => console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Cidade: ${pessoa.cidade}`))
 }
 
+//Adicione uma nova pessoa à lista pessoas
+pessoas.push({
+    nome: 'Maria Clara Pereira',
+    idade: 72,
+    cidade: 'Bananal'
+})
+
 mostrarListaPessoas(pessoas); //Imprime no console as informações de cada pessoa na lista.
