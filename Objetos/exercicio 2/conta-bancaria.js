@@ -3,10 +3,10 @@ const contaBancaria = {
     titular: 'Lucas Monteiro e Costa',
     saldo: 15487.87,
     depositar: function (valor) {
-        return this.saldo + valor;
+        return this.saldo += valor;
     },
     sacar: function (valor) {
-        return this.saldo - valor
+        return this.saldo -= valor
     }
 }
 //cria o objeto cliente;
@@ -20,4 +20,11 @@ function mostrarSaldo(objeto) {
 }
 
 mostrarSaldo(cliente);
-// console.log(cliente.conta);
+
+cliente.conta.depositar(112.13);
+
+mostrarSaldo(cliente);
+
+cliente.conta.sacar(10000);
+
+mostrarSaldo(cliente);
