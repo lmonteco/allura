@@ -1,38 +1,54 @@
-// Crie um arquivo chamado metodosObjeto.js para realizar este exercício.
-
-// Utilize o objeto carro do exercício 2 com as propriedades iniciais (marca, modelo, ano, cor) e adicione:
+// Utilize o objeto carro do exercício 2
 const carro = {
-    marca: 'Volkswagen', // marca (string): marca do carro.
-    modelo: 'Gol 1.6', // modelo (string): modelo do carro.
-    ano: 2006, // ano (number): ano de fabricação do carro.
-    cor: 'prata', // cor (string): cor do carro.
+    marca: 'Volkswagen',
+    modelo: 'Gol 1.6',
+    ano: 2006,
+    cor: 'prata',
     ligado: false, // ligado (boolean): indica se o carro está ligado ou não.
-    ligar: function () {
+    ligar: function () { // ligar (function): altera o status da propriedade 'ligado'
         if (this.ligado === true) {
             console.log('O carro já está ligado');            
         } else {
             this.ligado = true;
             console.log('O carro ligou');
         }
-    },// ligar (function): altera o status da propriedade 'ligado' para true
-    desligar: function () {
+    },
+    desligar: function () { // desligar (function): altera o status da propriedade 'ligado'
         if (this.ligado === false) {
             console.log('O carro já está desligado');
         } else {
             this.ligado = false;
             console.log('O carro desligou');
         }
-    }, // desligar (function): altera o status da propriedade 'ligado' para false
+    },
     obterDetalhes: function() {
-        this.ligado === true ? this.ligado = 'ligado' : this.ligado = 'desligado';
-        console.log(`Esse é um carro da marca ${this.marca}, modelo ${this.modelo}. Seu ano de fabricação é ${this.ano} e tem a cor ${this.cor}. No momento ele está ${this.ligado}`);
+        var status = '';
+        this.ligado === true ? status = 'ligado' : status = 'desligado';
+        console.log(`Esse é um carro da marca ${this.marca}, modelo ${this.modelo}. Seu ano de fabricação é ${this.ano} e tem a cor ${this.cor}. No momento ele está ${status}`);
     } // obterDetalhes (function): retorna os detalhes do carro    
 }
-// Chame os métodos ligar e desligar do objeto carro e imprima no console as mensagens resultantes.
-console.log(carro.ligado);
-carro.ligar();
-carro.ligar();
-carro.desligar();
-carro.desligar();
-// Chame o método obterDetalhes e imprima no console a string retornada.
-carro.obterDetalhes();
+// adicione uma nova propriedade chamada placa
+
+Object.defineProperty(carro, 'placa', {
+  value: 'KAK-8159',
+  enumerable: false // não enumerável
+});
+
+for (const chave in carro) {
+    console.log(chave);    
+}
+
+// carro.obterDetalhes();
+// carro.ligar(); // Chame o método ligar
+// carro.obterDetalhes();
+// carro.ligar(); 
+// carro.obterDetalhes();
+// carro.desligar(); // Chame o método desligar
+// carro.obterDetalhes();
+// carro.desligar();
+// carro.obterDetalhes(); // Chame o método
+
+const propriedadesCarro = Object.keys(carro);
+console.log(propriedadesCarro);
+
+console.log(carro.placa);
