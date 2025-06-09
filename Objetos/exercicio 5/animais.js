@@ -13,21 +13,19 @@ function ordenarAnimais(comparacao) {
 }
 
 // Função de comparação para ordenar por idade de forma crescente
-function compararIdadeCrescente(a, b) {
-    return a.idade - b.idade;
+function compararOrdem(chave, ordem = 'crescente') {
+    return function (a, b) {
+        if (typeof a[chave] === 'string') {
+            const resultado = a[chave].localeCompare(b[chave]);       
+            return ordem === 'crescente' ? resultado : -resultado;
+        } else {
+            const resultado = a[chave] - b[chave];       
+            return ordem === 'crescente' ? resultado : -resultado;
+        }
+    }
 }
 
 // Ordena os animais por idade de forma crescente e imprime no console
-const animaisOrdenadosCrescente = ordenarAnimais(compararIdadeCrescente);
+const animaisOrdenadosIdade = ordenarAnimais((compararOrdem('nome','crescente')));
 console.log("Animais Ordenados por Idade (Crescente):");
-console.log(animaisOrdenadosCrescente);
-
-// Função de comparação para ordenar por idade de forma decrescente
-function compararIdadeDecrescente(a, b) {
-    return b.idade - a.idade;
-}
-
-// Ordena os animais por idade de forma decrescente e imprime no console
-const animaisOrdenadosDecrescente = ordenarAnimais(compararIdadeDecrescente);
-console.log("\nAnimais Ordenados por Idade (Decrescente):");
-console.log(animaisOrdenadosDecrescente);
+console.log(animaisOrdenadosIdade);
