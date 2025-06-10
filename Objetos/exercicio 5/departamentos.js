@@ -21,11 +21,10 @@ function encontrarFuncionarioPorId(id) {
     for (const departamento of departamentos) {
         const funcionarioEncontrado = departamento.funcionarios.find(funcionario => funcionario.id === id);     
         if (funcionarioEncontrado) {
-            console.log(funcionarioEncontrado);
-            return;
+            return funcionarioEncontrado;
         }
     }
-    console.log('Não encontrado');    
+    return 'Não encontrado';    
 }
 
-encontrarFuncionarioPorId(202);
+console.log(encontrarFuncionarioPorId(202));
